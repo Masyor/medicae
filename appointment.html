@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 375-B/42/K - Request for Medical Assistance</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #f5f5f0;
+            color: #333;
+            line-height: 1.4;
+            margin: 0;
+            padding: 20px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="10" y="50" font-family="Arial" font-size="10" fill="rgba(0,0,0,0.1)" transform="rotate(-45 50,50)">OFFICIO MEDICAE</text></svg>');
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border: 1px solid #ccc;
+        }
+        
+        .header {
+            border-bottom: 3px double #000;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin: 0;
+            color: #800000;
+        }
+        
+        .form-number {
+            text-align: right;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        .warning {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+        
+        .section-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #800000;
+        }
+        
+        .subsection {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .subsection-title {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"], input[type="number"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        
+        textarea {
+            min-height: 60px;
+        }
+        
+        .checkbox-group {
+            margin-bottom: 10px;
+        }
+        
+        .checkbox-group label {
+            display: inline;
+            margin-left: 5px;
+        }
+        
+        .required:after {
+            content: " *";
+            color: red;
+        }
+        
+        .form-footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+        
+        button {
+            background-color: #800000;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+        
+        button:hover {
+            background-color: #600000;
+        }
+        
+        .stamp-area {
+            height: 100px;
+            border: 2px dashed #ccc;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #999;
+        }
+        
+        .small-text {
+            font-size: 0.8em;
+            color: #666;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>OFFICIO MEDICAE - DEPARTMENTO ADMINISTRATUM</h1>
+            <div class="form-number">Form 375-B/42/K (Rev. 12.7.41M)</div>
+        </div>
+        
+        <div class="warning">
+            <strong>NOTICE:</strong> Failure to complete this form in its entirety will result in automatic rejection. All fields marked with * are required. Incomplete forms will be processed in 3-5 standard Terran years. Bribery is strictly prohibited (see subsection 47-D for approved donation procedures).
+        </div>
+        
+        <div class="section">
+            <div class="section-title">SECTION I: REQUESTOR INFORMATION</div>
+            
+            <div class="subsection">
+                <label class="required">1. Full Imperial Name (as registered with Departmento Munitorum):</label>
+                <input type="text" required>
+                
+                <label>2. Previous Names (include all aliases, nicknames, and titles):</label>
+                <textarea></textarea>
+                
+                <label class="required">3. Current Planetary Residence:</label>
+                <input type="text" required>
+                
+                <label class="required">4. Current Hive/Sector/Block:</label>
+                <input type="text" required>
+                
+                <label class="required">5. Imperial Citizen Identification Number:</label>
+                <input type="text" pattern="[A-Z]{2}-[0-9]{8}-[A-Z]{1}" placeholder="XX-12345678-X" required>
+                
+                <label>6. Blood Type (if unknown, provide sample to nearest Medicae station):</label>
+                <select>
+                    <option value="">Select...</option>
+                    <option value="A">A (Holy)</option>
+                    <option value="B">B (Acceptable)</option>
+                    <option value="AB">AB (Suspicious)</option>
+                    <option value="O">O (Common)</option>
+                    <option value="OTHER">Other (Explain in Section VII)</option>
+                    <option value="UNKNOWN">Unknown (Penalty may apply)</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">SECTION II: MEDICAL REQUEST DETAILS</div>
+            
+            <div class="subsection">
+                <label class="required">7. Nature of Medical Request:</label>
+                <select required>
+                    <option value="">Select...</option>
+                    <option value="BATTLE">Battle Injury (Attach Form 228-G)</option>
+                    <option value="DISEASE">Disease (Attach Form 229-H)</option>
+                    <option value="MUTATION">Mutation/Possession (Attach Form 666-X)</option>
+                    <option value="ROUTINE">Routine Checkup (Fee applies)</option>
+                    <option value="OTHER">Other (Explain in Section VII)</option>
+                </select>
+                
+                <label class="required">8. Date of Injury/Onset:</label>
+                <input type="date" required>
+                
+                <label>9. Time of Injury/Onset (Imperial Standard):</label>
+                <input type="time">
+                
+                <label class="required">10. Severity (Check all that apply):</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="severity1" name="severity">
+                    <label for="severity1">Minor (Will heal naturally)</label><br>
+                    <input type="checkbox" id="severity2" name="severity">
+                    <label for="severity2">Moderate (May impair function)</label><br>
+                    <input type="checkbox" id="severity3" name="severity">
+                    <label for="severity3">Severe (Immediate threat to life)</label><br>
+                    <input type="checkbox" id="severity4" name="severity">
+                    <label for="severity4">Critical (Near death)</label><br>
+                    <input type="checkbox" id="severity5" name="severity">
+                    <label for="severity5">Already Dead (Attach resurrection authorization)</label>
+                </div>
+                
+                <label>11. Number of Limbs Currently Missing:</label>
+                <input type="number" min="0" max="4">
+                
+                <label>12. Number of Organs Currently Missing:</label>
+                <input type="number" min="0">
+                
+                <label>13. Estimated Amount of Blood Lost (in liters):</label>
+                <input type="number" step="0.1" min="0">
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">SECTION III: PRIOR TREATMENT HISTORY</div>
+            
+            <div class="subsection">
+                <label>14. Have you received treatment for this condition before?</label>
+                <div class="checkbox-group">
+                    <input type="radio" id="prevTreatmentYes" name="prevTreatment" value="yes">
+                    <label for="prevTreatmentYes">Yes</label>
+                    <input type="radio" id="prevTreatmentNo" name="prevTreatment" value="no">
+                    <label for="prevTreatmentNo">No</label>
+                    <input type="radio" id="prevTreatmentUnsure" name="prevTreatment" value="unsure">
+                    <label for="prevTreatmentUnsure">Unsure (Memory may have been altered)</label>
+                </div>
+                
+                <label>15. If yes, provide details of previous treatment (include practitioner name and date):</label>
+                <textarea></textarea>
+                
+                <label>16. List all medications currently being taken (Attach Form 451-P if more than 5):</label>
+                <textarea></textarea>
+                
+                <label>17. Have you ever been declared a heretic by the Inquisition?</label>
+                <div class="checkbox-group">
+                    <input type="radio" id="heresyYes" name="heresy" value="yes">
+                    <label for="heresyYes">Yes</label>
+                    <input type="radio" id="heresyNo" name="heresy" value="no">
+                    <label for="heresyNo">No</label>
+                    <input type="radio" id="heresyUnsure" name="heresy" value="unsure">
+                    <label for="heresyUnsure">Unsure (Memory may have been altered)</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">SECTION IV: INSURANCE INFORMATION</div>
+            
+            <div class="subsection">
+                <label class="required">18. Do you have Imperial Medical Insurance?</label>
+                <div class="checkbox-group">
+                    <input type="radio" id="insuranceYes" name="insurance" value="yes" required>
+                    <label for="insuranceYes">Yes</label>
+                    <input type="radio" id="insuranceNo" name="insurance" value="no" required>
+                    <label for="insuranceNo">No</label>
+                    <input type="radio" id="insuranceUnsure" name="insurance" value="unsure" required>
+                    <label for="insuranceUnsure">Unsure (Check with your local Administratum office)</label>
+                </div>
+                
+                <label>19. If yes, provide Insurance Identification Number:</label>
+                <input type="text" placeholder="IMI-XXXX-XXXX-XXXX">
+                
+                <label>20. Insurance Provider:</label>
+                <select>
+                    <option value="">Select...</option>
+                    <option value="IMPERIAL">Imperial Medical Collective</option>
+                    <option value="ADMIN">Adeptus Administratum Coverage</option>
+                    <option value="MECHANICUS">Adeptus Mechanicus Biological Maintenance Plan</option>
+                    <option value="INQUISITION">Inquisitorial Supplemental Coverage</option>
+                    <option value="OTHER">Other (Explain in Section VII)</option>
+                </select>
+                
+                <label>21. Estimated Net Worth (for billing purposes):</label>
+                <select>
+                    <option value="">Select...</option>
+                    <option value="LESS100">Less than 100 Thrones</option>
+                    <option value="100-1000">100-1,000 Thrones</option>
+                    <option value="1000-10000">1,000-10,000 Thrones</option>
+                    <option value="10000+">More than 10,000 Thrones</option>
+                    <option value="UNKNOWN">Unknown (Assessment will be made)</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">SECTION V: NEXT OF KIN</div>
+            
+            <div class="subsection">
+                <label>22. Name of Next of Kin (in case of termination):</label>
+                <input type="text">
+                
+                <label>23. Relationship to Next of Kin:</label>
+                <input type="text">
+                
+                <label>24. Next of Kin Contact Information:</label>
+                <textarea></textarea>
+                
+                <label>25. Does next of kin authorize servitor conversion if necessary?</label>
+                <div class="checkbox-group">
+                    <input type="radio" id="servitorYes" name="servitor" value="yes">
+                    <label for="servitorYes">Yes</label>
+                    <input type="radio" id="servitorNo" name="servitor" value="no">
+                    <label for="servitorNo">No</label>
+                    <input type="radio" id="servitorUnsure" name="servitor" value="unsure">
+                    <label for="servitorUnsure">Unsure (Default to Yes)</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">SECTION VI: AUTHORIZATIONS</div>
+            
+            <div class="subsection">
+                <label class="required">26. Do you authorize the Officio Medicae to perform all necessary procedures?</label>
+                <div class="checkbox-group">
+                    <input type="radio" id="authYes" name="authorization" value="yes" required>
+                    <label for="authYes">Yes</label>
+                    <input type="radio" id="authNo" name="authorization" value="no" required>
+                    <label for="authNo">No (Request will be denied)</label>
+                </div>
+                
+                <label class="required">27. Do you consent to potential experimental treatments?</label>
+                <div class="checkbox-group">
+                    <input type="radio" id="experimentalYes" name="experimental" value="yes" required>
+                    <label for="experimentalYes">Yes</label>
+                    <input type="radio" id="experimentalNo" name="experimental" value="no" required>
+                    <label for="experimentalNo">No (May limit treatment options)</label>
+                </div>
+                
+                <label class="required">28. Do you swear that all information provided is true under penalty of Adeptus Arbites investigation?</label>
+                <div class="checkbox-group">
+                    <input type="radio" id="oathYes" name="oath" value="yes" required>
+                    <label for="oathYes">Yes</label>
+                    <input type="radio" id="oathNo" name="oath" value="no" required>
+                    <label for="oathNo">No (Request will be denied)</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">SECTION VII: ADDITIONAL INFORMATION</div>
+            
+            <div class="subsection">
+                <label>29. Additional information or explanations (use additional parchment if necessary):</label>
+                <textarea></textarea>
+                
+                <label>30. Attach supporting documents (Form will be processed faster if all required documents are attached):</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="doc1" name="docs">
+                    <label for="doc1">Form 228-G (Battle Injury Verification)</label><br>
+                    <input type="checkbox" id="doc2" name="docs">
+                    <label for="doc2">Form 229-H (Disease Verification)</label><br>
+                    <input type="checkbox" id="doc3" name="docs">
+                    <label for="doc3">Form 451-P (Medication List)</label><br>
+                    <input type="checkbox" id="doc4" name="docs">
+                    <label for="doc4">Form 666-X (Mutation/Possession Verification)</label><br>
+                    <input type="checkbox" id="doc5" name="docs">
+                    <label for="doc5">Other (Describe below)</label>
+                </div>
+                
+                <label>31. Description of additional documents:</label>
+                <textarea></textarea>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">SECTION VIII: OFFICIAL USE ONLY</div>
+            
+            <div class="subsection">
+                <label>32. Officio Medicae Case Number:</label>
+                <input type="text" disabled>
+                
+                <label>33. Assigned Medicae Practitioner:</label>
+                <input type="text" disabled>
+                
+                <label>34. Date Received:</label>
+                <input type="date" disabled>
+                
+                <label>35. Approval Status:</label>
+                <input type="text" disabled>
+                
+                <div class="stamp-area">
+                    [OFFICIO MEDICAE APPROVAL STAMP AREA]
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-footer">
+            <p>By submitting this form, you acknowledge that processing may take 3-5 standard Terran years, or up to 10 years during periods of increased heresy. Emergency requests must be submitted in person at your nearest Officio Medicae facility with proper identification and a bribe... err, processing fee.</p>
+            
+            <p class="small-text">Form 375-B/42/K Rev. 12.7.41M - This parchment is manufactured from 100% recycled [REDACTED]</p>
+            
+            <button type="submit" id="submitForm">Submit Request</button>
+            
+            <div id="formSubmitted" style="display: none; margin-top: 20px; padding: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb;">
+                <strong>FORM SUBMITTED FOR PROCESSING</strong><br>
+                Your request has been received and assigned case number <span id="caseNumber"></span>. Please allow 3-5 standard Terran years for processing. For immediate assistance, please proceed to your nearest Medicae facility and prepare to wait in line.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('submitForm').addEventListener('click', function() {
+            // Generate a ridiculous case number
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const numbers = '0123456789';
+            let caseNum = '';
+            
+            // Add two random letters
+            caseNum += letters.charAt(Math.floor(Math.random() * letters.length));
+            caseNum += letters.charAt(Math.floor(Math.random() * letters.length));
+            caseNum += '-';
+            
+            // Add eight random numbers
+            for (let i = 0; i < 8; i++) {
+                caseNum += numbers.charAt(Math.floor(Math.random() * numbers.length));
+            }
+            
+            caseNum += '/';
+            caseNum += Math.floor(Math.random() * 10);
+            caseNum += Math.floor(Math.random() * 10);
+            caseNum += Math.floor(Math.random() * 10);
+            
+            document.getElementById('caseNumber').textContent = caseNum;
+            document.getElementById('formSubmitted').style.display = 'block';
+            
+            // Scroll to the submission message
+            document.getElementById('formSubmitted').scrollIntoView({ behavior: 'smooth' });
+            
+            // Change button text and disable it
+            this.textContent = 'Form Submitted';
+            this.disabled = true;
+            this.style.backgroundColor = '#6c757d';
+            
+            // Play a silly sound (if you want to add one)
+            // var audio = new Audio('bureaucratic_sound.mp3');
+            // audio.play();
+        });
+    </script>
+</body>
+</html>
